@@ -292,7 +292,7 @@
     }
 
     $('adm-google').addEventListener('click', function () {
-      cliente().auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.origin + location.pathname + '#giwa' } });
+      cliente().auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.origin + location.pathname + '?giwa' } });
     });
     $('adm-salir').addEventListener('click', function () { cliente().auth.signOut().then(function () { cargado = false; vista('adm-entrar'); }); });
     $('adm-salir-2').addEventListener('click', function () { cliente().auth.signOut().then(function () { vista('adm-entrar'); }); });
@@ -323,8 +323,9 @@
 
   /* ── Arranque ─────────────────────────────────────────────── */
   window.addEventListener('hashchange', function () { irTab(location.hash.slice(1)); });
-  irTab((location.hash || '#demos').slice(1));
-  if (sesion && location.hash !== '#giwa') {
+  var vuelveGoogle = /[?&]giwa\b/.test(location.search);
+  irTab(vuelveGoogle ? 'giwa' : (location.hash || '#demos').slice(1));
+  if (sesion && !vuelveGoogle && location.hash !== '#giwa') {
     rubro = RUBROS.filter(function (r) { return r.id === sesion.rubro; })[0] || null;
     if (rubro) seguir();
   }
