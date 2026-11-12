@@ -34,6 +34,23 @@
     setTimeout(cerrar, 10000); // si el video no arranca, la web no queda tapada
   }
 
+  // Submenú de Demos: se abre con su flecha y se cierra al tocar en otro lado.
+  document.querySelectorAll('.sub').forEach(function (sub) {
+    var btn = sub.querySelector('.sub-btn');
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var abierto = sub.classList.toggle('abierto');
+      btn.setAttribute('aria-expanded', String(abierto));
+    });
+  });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.sub.abierto').forEach(function (sub) {
+      if (sub.contains(e.target)) return;
+      sub.classList.remove('abierto');
+      sub.querySelector('.sub-btn').setAttribute('aria-expanded', 'false');
+    });
+  });
+
   // Carruseles de casos: las flechas avanzan de a una slide.
   document.querySelectorAll('[data-car]').forEach(function (b) {
     b.addEventListener('click', function () {
