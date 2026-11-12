@@ -124,7 +124,7 @@ p{margin:0 0 18px}
 .car-ctrl{display:flex;gap:8px;flex:none}
 .car-ctrl .btn-ico{width:44px;height:44px;border:1px solid var(--b-suave);border-radius:50%;color:var(--tx)}
 .car-ctrl .btn-ico:hover{border-color:var(--azul);color:var(--azul)}
-.car{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 44px)/3);gap:22px;margin:0;padding:0 0 12px;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--b-suave) transparent}
+.car{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 44px)/3);gap:22px;margin:0;padding:0 0 12px;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--b-suave) transparent}
 .car li{scroll-snap-align:start;min-width:0}
 .car img{width:100%;border-radius:var(--r);border:1px solid var(--b-suave)}
 .car:focus-visible{outline:2px solid var(--azul);outline-offset:4px}
