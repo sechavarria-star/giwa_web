@@ -34,6 +34,15 @@
     setTimeout(cerrar, 10000); // si el video no arranca, la web no queda tapada
   }
 
+  // Carruseles de casos: las flechas avanzan de a una slide.
+  document.querySelectorAll('[data-car]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var car = b.closest('.caso-c').querySelector('.car');
+      var paso = car.querySelector('li').getBoundingClientRect().width + 22;
+      car.scrollBy({ left: Number(b.dataset.car) * paso, behavior: quieto ? 'auto' : 'smooth' });
+    });
+  });
+
   if (quieto) {
     document.querySelectorAll('video[autoplay]').forEach(function (v) { v.pause(); });
     return;
