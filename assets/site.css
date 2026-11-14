@@ -33,7 +33,7 @@ p{margin:0 0 18px}
 .top nav a{display:inline-flex;align-items:center;gap:4px;color:var(--tx);text-decoration:none;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;transition:color .2s}
 .top nav a:hover{color:var(--azul)}
 .top nav .ico{width:13px;height:13px}
-.menu-btn{display:none}
+.top .menu-btn{display:none}
 .sub{position:relative;display:inline-flex;align-items:center;gap:2px}
 .sub-btn{width:28px;height:28px;color:var(--tx)}
 .sub-btn .ico{width:14px;height:14px;transition:transform .2s}
@@ -219,7 +219,7 @@ input.n{font-family:var(--mono);text-transform:uppercase}
 }
 @media (max-width:720px){
   .marca img{width:130px}
-  .menu-btn{display:inline-flex;width:44px;height:44px;color:var(--tx)}
+  .top .menu-btn{display:inline-flex;width:44px;height:44px;color:var(--tx)}
   .menu-btn .ico{width:24px;height:24px}
   .top.con-menu nav{display:none;width:100%}
   .top.con-menu.abierto nav{display:flex;flex-direction:column;gap:0;padding-top:6px}
