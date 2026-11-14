@@ -137,10 +137,12 @@ p{margin:0 0 18px}
 .caso-t:hover{transform:translateY(-3px)}
 
 /* Servicios con imagen */
-.serv{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.serv-img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.serv-txt{padding:26px}
-.serv-txt .num{display:block;margin-bottom:8px}
+.serv{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:start;padding:22px}
+.serv-img{width:96px;aspect-ratio:1;object-fit:cover;object-position:center 40%;border-radius:8px;opacity:.9}
+.serv-txt{min-width:0}
+.serv-txt .num{display:block;margin-bottom:4px}
+.serv-txt h3{margin-bottom:8px}
+.grid3 .card:hover{transform:translateY(-3px)}
 
 /* Metodología desplegable */
 .valor.desp{display:block;padding:0}
@@ -238,6 +240,8 @@ input.n{font-family:var(--mono);text-transform:uppercase}
   .intro .btn{right:16px;bottom:16px}
   .caso-t{grid-template-columns:88px minmax(0,1fr);gap:16px;padding:16px}
   .caso-t img{width:88px}
+  .serv{grid-template-columns:72px minmax(0,1fr);gap:16px;padding:18px}
+  .serv-img{width:72px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
