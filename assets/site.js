@@ -51,19 +51,6 @@
     });
   });
 
-  // Carruseles de casos: las flechas avanzan de a una slide.
-  document.querySelectorAll('[data-car]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var car = b.closest('.caso-c').querySelector('.car');
-      var slides = [].slice.call(car.children);
-      var pos = slides.map(function (s) { return s.offsetLeft - slides[0].offsetLeft; });
-      var actual = 0;
-      pos.forEach(function (p, i) { if (Math.abs(p - car.scrollLeft) < Math.abs(pos[actual] - car.scrollLeft)) actual = i; });
-      var destino = Math.max(0, Math.min(slides.length - 1, actual + Number(b.dataset.car)));
-      car.scrollTo({ left: pos[destino], behavior: quieto ? 'instant' : 'smooth' });
-    });
-  });
-
   if (quieto) {
     document.querySelectorAll('video[autoplay]').forEach(function (v) { v.pause(); });
     return;

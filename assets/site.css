@@ -126,17 +126,35 @@ p{margin:0 0 18px}
 .simu{display:block;width:100%;border:0;margin-top:16px}
 
 /* Casos */
-.caso-c{margin-top:72px;min-width:0}
-.caso-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:24px}
-.caso-cab h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:10px}
-.caso-cab p:last-child{margin:0}
-.car-ctrl{display:flex;gap:8px;flex:none}
-.car-ctrl .btn-ico{width:44px;height:44px;border:1px solid var(--b-suave);border-radius:50%;color:var(--tx)}
-.car-ctrl .btn-ico:hover{border-color:var(--azul);color:var(--azul)}
-.car{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 44px)/3);gap:22px;margin:0;padding:0 0 12px;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--b-suave) transparent}
-.car li{scroll-snap-align:start;min-width:0}
-.car img{width:100%;border-radius:var(--r);border:1px solid var(--b-suave)}
-.car:focus-visible{outline:2px solid var(--azul);outline-offset:4px}
+.casos{margin-top:48px}
+.caso-t{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);padding:0;overflow:hidden}
+.caso-t img{width:100%;height:100%;object-fit:cover;object-position:top}
+.caso-txt{display:flex;flex-direction:column;padding:28px}
+.caso-txt h2{font-size:24px;margin-bottom:10px}
+.caso-txt .btn{margin-top:auto;align-self:flex-start}
+
+/* Servicios con imagen */
+.serv{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.serv-img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.serv-txt{padding:26px}
+.serv-txt .num{display:block;margin-bottom:8px}
+
+/* Metodología desplegable */
+.valor.desp{display:block;padding:0}
+.valor summary{display:flex;gap:18px;padding:22px;cursor:pointer;list-style:none}
+.valor summary::-webkit-details-marker{display:none}
+.desp-ico{margin-left:auto;align-self:center;width:22px!important;height:22px!important;color:var(--tx);transition:transform .25s}
+.valor[open] .desp-ico{transform:rotate(180deg)}
+.valor-img{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 22px 22px}
+.valor-img.uno{grid-template-columns:minmax(0,1fr)}
+.valor-img img{border-radius:10px}
+
+/* Seguridad */
+.lista{padding-left:20px}
+.lista li{margin-bottom:10px}
+.seg-img{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.seg-img img{border-radius:var(--r);border:1px solid var(--b-suave)}
+.seg-img img:first-child{grid-column:1/-1}
 
 /* Demos */
 .demo{display:flex;flex-direction:column;padding:0;overflow:hidden}
@@ -197,7 +215,6 @@ input.n{font-family:var(--mono);text-transform:uppercase}
   .hero,.dos,.grid2,.grid3{grid-template-columns:minmax(0,1fr)}
   .galeria{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero-marco{max-width:300px}
-  .car{grid-auto-columns:calc((100% - 22px)/2)}
   body{font-size:17px}
 }
 @media (max-width:720px){
@@ -216,9 +233,8 @@ input.n{font-family:var(--mono);text-transform:uppercase}
   .card{padding:24px}
   .chat{height:520px}
   .intro .btn{right:16px;bottom:16px}
-  .car{grid-auto-columns:82%;gap:14px}
-  .caso-cab{flex-direction:column;align-items:flex-start}
-  .car-ctrl{display:none}
+  .caso-t{grid-template-columns:minmax(0,1fr)}
+  .caso-t img{aspect-ratio:4/5;height:auto}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
